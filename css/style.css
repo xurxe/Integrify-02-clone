@@ -76,7 +76,7 @@ a {
     color: #cccccc;
 }
 
-.smaller {
+.smaller-italic {
     font-size: 0.9rem;
     font-style: italic;
 }
@@ -249,7 +249,11 @@ hr {
     position: relative;
 }
 
-.feature:after {
+.feature:hover {
+    background-color: white;
+}
+
+.feature:hover::after {
     border-right: 2.5rem solid transparent;
     border-top: 2.5rem solid white;
     bottom: -2.5rem;
@@ -258,7 +262,6 @@ hr {
     left:0;
     position: absolute;
     width: 0;
-    z-index: 10;
 }
 
 .circle {
@@ -319,7 +322,7 @@ hr {
     position: relative;
 }
 
-.blog:after {
+.blog::after {
     border-right: 2.5rem solid transparent;
     border-top: 2.5rem solid white;
     bottom: -2.5rem;
@@ -367,7 +370,7 @@ hr {
     font-style: italic;
 }
 
-.testimonial:after {
+.testimonial::after {
     border-right: 2.5rem solid transparent;
     border-top: 2.5rem solid white;
     bottom: -2.5rem;
@@ -414,7 +417,7 @@ hr {
     border-radius: 2px;
 }
 
-.bottom:after {
+.bottom::after {
     border-right: 3.5rem solid transparent;
     border-top: 3.5rem solid #458ED3;
     bottom: -3.5rem;
@@ -450,10 +453,25 @@ hr {
     color: white;
 }
 
+.flickr-square-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    width: 100%
+}
+
+.flickr-square { /* #TODO: MAKE RESPONSIVE *****************/
+    height: 50px;
+    width: 50px;
+    background-color:#252525;
+}
+
 
 /* FOOTER **************************************************************************************************** */
 
 .footer {
     grid-area: footer;
     height: var(--bottom-height);
+    color: #cccccc;
 }
