@@ -24,7 +24,17 @@ html {
     background-color: transparent;
 }
 
-/* GRID ***************************************************************************************************** */
+.stripe {
+    background: repeating-linear-gradient(
+        -45deg,
+        #cccccc,
+        #cccccc 1px,
+        #EFEFEF 1px,
+        #EFEFEF 4px
+    );
+}
+
+/* GRID ****************************************************************************************************** */
 
 .grid {
     grid-template-areas: 
@@ -67,13 +77,6 @@ html {
 
 .border {
     grid-area: border;
-    background: repeating-linear-gradient(
-        -45deg,
-        #cccccc,
-        #cccccc 1px,
-        #EFEFEF 1px,
-        #EFEFEF 4px
-    );
 }
 
 .bottom {
@@ -100,20 +103,23 @@ html {
     grid-area: footer;
 }
 
-/* MAIN ***************************************************************************************************** */
+/* MAIN ****************************************************************************************************** */
 
 .main {
     grid-template-areas: 
-        "section1"
-        "section2"
-        "section3";
+        "mainA"
+        "mainB"
+        "mainC";
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(100px, auto) minmax(100px, auto) minmax(100px, auto);
+    grid-template-rows: auto;
     width: 100%;
 }
 
+/* MAIN A **************************************************************************************************** */
+
 .section1 {
+    background-color: purple;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -138,12 +144,93 @@ html {
     text-transform: uppercase;
 }
 
+/* MAIN B **************************************************************************************************** */
+
 .section2 {
+    grid-template-areas: 
+        "title2"
+        "content2";
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px minmax(100px, auto);
+    width: 100%;
+}
+
+.title2 {
     background-color: blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(50px);
+    width: 100%;
+}
+
+.content2 {
+    background-color: lightblue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(100px, auto);
+    width: 100%;
+}
+
+/* MAIN C **************************************************************************************************** */
+
+.mainC {
+    display: grid;
+    grid-template-areas: 
+        "section3 section4";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
 }
 
 .section3 {
+    grid-template-areas: 
+        "title3"
+        "content3";
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50px, auto) minmax(100px, auto);
+    width: 100%;
+}
+
+.title3 {
     background-color: green;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    width: 100%;
+}
+
+.content3 {
+    background-color: lightgreen;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(100px, auto) minmax(100px, auto);
+    width: 100%;
+}
+
+.section4 {
+    grid-template-areas: 
+        "title4"
+        "content4";
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto;
+    width: 100%;
+}
+
+.title4 {
+    background-color: orange;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    width: 100%;
+}
+
+.content4 {
+    background-color: yellow;
+    height: auto;
+
 }
 
 
