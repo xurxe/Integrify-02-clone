@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
 }
 
 :root {
@@ -20,6 +21,8 @@ html {
     font-size: 13px;
     width: 100%;
     -webkit-font-smoothing: antialiased;
+    line-height: 1.25;
+    font-weight: 300;
 }
 
 h1 {
@@ -52,7 +55,7 @@ h4 {
 
 h5 {
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 900;
     margin-bottom: 0.3rem;
 }
 
@@ -63,6 +66,19 @@ em {
 
 b {
     font-weight: 900; 
+}
+
+p {
+    padding-bottom: var(--subgrid-column-gap);
+}
+
+a {
+    color: #cccccc;
+}
+
+.smaller {
+    font-size: 0.9rem;
+    font-style: italic;
 }
 
 .grey {
@@ -95,21 +111,6 @@ b {
     background-color: white;
 }
 
-.grid {
-    display: grid;
-    grid-template-areas: 
-        "header header header"
-        "header header header" 
-        "border border border"
-        "left main right"
-        "left bottom right"
-        "info info info"
-        "footer footer footer";
-    grid-template-columns: 100px 1fr 100px;
-    grid-template-rows: 250px auto var(--stripes-height) auto auto 225px auto;
-    width: 100%;
-}
-
 .blue-button {
     color: white;
     background-color: #458ED3;
@@ -126,8 +127,54 @@ b {
     font-weight: 500;
 }
 
+hr {
+    border: 1px solid #353535;
+    margin: 0.6rem 0;
+}
 
-/* HEADER AND ADJACENTS **************************************************************************************************** */
+/* GRID ****************************************************************************************************** */
+
+.grid {
+    display: grid;
+    grid-template-areas: 
+        "header-left header header-right"
+        "header-left header header-right" 
+        "border border border"
+        ". main ."
+        "main-left bottom main-right"
+        "info-left info info-right"
+        "footer-left footer footer-right";
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: 250px auto var(--stripes-height) auto auto auto auto;
+    width: 100%;
+}
+
+.header-left {
+    grid-area: header-left;
+}
+
+.header-right {
+    grid-area: header-right;
+}
+
+.info-left {
+    grid-area: info-left;
+}
+
+.info-right {
+    grid-area: info-right;
+}
+
+.footer-left {
+    grid-area: footer-left;
+}
+
+.footer-right {
+    grid-area: footer-right;
+}
+
+
+/* HEADER AND ADJACENTS ************************************************************************************** */
 
 .header {
     grid-area: header;
@@ -153,9 +200,9 @@ b {
 }
 
 .top:after {
-    border-right: 50px solid transparent;
-    border-top: 50px solid #458ED3;
-    bottom: -50px;
+    border-right: 3.5rem solid transparent;
+    border-top: 3.5rem solid #458ED3;
+    bottom: -3.5rem;
     content:"";
     height: 0;
     left:0;
@@ -289,7 +336,7 @@ b {
 }
 
 .blog-snippet {
-    padding: var(--subgrid-column-gap) var(--subgrid-column-gap) calc(2*var(--subgrid-column-gap)) var(--subgrid-column-gap); 
+    padding: var(--subgrid-column-gap) var(--subgrid-column-gap) var(--subgrid-column-gap) var(--subgrid-column-gap); 
 }
 
 .title3 {
@@ -312,7 +359,7 @@ b {
 }
 
 .testimonial {
-    padding: var(--subgrid-column-gap) var(--subgrid-column-gap) calc(2*var(--subgrid-column-gap)) var(--subgrid-column-gap);
+    padding: var(--subgrid-column-gap) var(--subgrid-column-gap) var(--subgrid-column-gap) var(--subgrid-column-gap);
     position: relative;
 }
 
@@ -348,8 +395,7 @@ b {
 }
 
 
-/* FOOTER AND ADJACENTS *************************************************************************************************** */
-
+/* BOTTOM **************************************************************************************************** */
 
 .bottom {
     grid-column: 2 / 3;
@@ -369,9 +415,9 @@ b {
 }
 
 .bottom:after {
-    border-right: 50px solid transparent;
-    border-top: 50px solid #458ED3;
-    bottom: -50px;
+    border-right: 3.5rem solid transparent;
+    border-top: 3.5rem solid #458ED3;
+    bottom: -3.5rem;
     content: "";
     height: 0;
     left: 0;
@@ -379,9 +425,33 @@ b {
     width: 0;
 }
 
+
+
+/* INFO ****************************************************************************************************** */
+
 .info {
     grid-area: info;
+    
+    display: grid;
+    grid-column-gap: var(--subgrid-column-gap);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-bottom: var(--subgrid-column-gap);
+    padding-top: var(--bottom-height);
+    color: #aaaaaa;
 }
+
+.info h5 {
+    margin-bottom: var(--subgrid-column-gap);
+    color: white;
+}
+
+.info p > b {
+    color: white;
+}
+
+
+/* FOOTER **************************************************************************************************** */
 
 .footer {
     grid-area: footer;
