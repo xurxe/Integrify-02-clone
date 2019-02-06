@@ -6,6 +6,43 @@
 html {
     width: 100%;
     background-color: #EFEFEF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #252525;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-size: 1.5972rem;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: white;
+    font-weight: 100;
+    font-size: 1.452rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.21rem;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1.1rem;
+    text-align: center;
+    text-transform: uppercase; 
+}
+
+h5 {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+em {
+    font-style: italic;
+    font-weight: 900;
 }
 
 .grey {
@@ -34,6 +71,8 @@ html {
     );
 }
 
+
+
 /* GRID ****************************************************************************************************** */
 
 .grid {
@@ -47,7 +86,7 @@ html {
         "footer footer footer";
     display: grid;
     grid-template-columns: 100px 1fr 100px;
-    grid-template-rows: 200px 50px 10px minmax(100px, auto) 50px 200px 50px;
+    grid-template-rows: 200px auto 1rem minmax(100px, auto) auto 200px 50px;
     width: 100%;
 }
 
@@ -63,6 +102,9 @@ html {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     position: relative;
+    height: 6rem;
+    line-height: 6rem;
+    padding-left: 55px;
 }
 
 .top:after {
@@ -71,7 +113,8 @@ html {
     content:"";
     height: 0;
     position: absolute;
-    top: 50px;
+    top: 6em;
+    left:0;
     width: 0;
 }
 
@@ -83,6 +126,10 @@ html {
     grid-column: 2 / 3;
     grid-row: 5 / 6;
     position: relative;
+    font-size: 1.452rem;
+    height: 3em;
+    line-height: 3em;
+    padding-left: 55px;
 }
 
 .bottom:after {
@@ -91,8 +138,9 @@ html {
     content:"";
     height: 0;
     position: absolute;
-    top: 50px;
+    top: 3em;
     width: 0;
+    left: 0;
 }
 
 .info {
@@ -124,6 +172,7 @@ html {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     text-align: center;
+    margin-top: 5rem;
 }
 
 .feature {
@@ -157,7 +206,6 @@ html {
 }
 
 .title2 {
-    background-color: blue;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: minmax(50px);
@@ -194,7 +242,6 @@ html {
 }
 
 .title3 {
-    background-color: green;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px;
@@ -220,7 +267,6 @@ html {
 }
 
 .title4 {
-    background-color: orange;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 50px;
