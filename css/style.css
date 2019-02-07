@@ -12,7 +12,7 @@
     --medium-length: 3rem;
     --long-length: 4.5rem;
     --longer-length: 6rem;
-    --white-gradient: white, #CCCCCC;
+    --white-gradient: white, #EFEFEF;
     --grey-gradient: #666666, #252525;
     --blue-gradient: #458ED3, #387bb9;
     --lightest-grey: #EFEFEF;
@@ -247,7 +247,7 @@ header div {
 .top {
     align-items: center;
     background: var(--blue);
-    border-radius: 2px;
+    border-radius: 2px 2px 0 0;
     display: flex;
     grid-area: top;
     height: var(--longer-length);
@@ -468,9 +468,58 @@ main {
 
 .content4 {
     grid-area: content4;
-    background-color: white;
     height: auto;
     margin-top: var(--medium-length);
+}
+
+.tabs
+{
+    position: relative;
+    clear: both;
+    padding-top: var(--short-length);
+    height: 100%;
+}
+
+.content {
+    margin-top: var(--short-length);
+    padding: var(--short-length);
+    width: calc(100% - 2*var(--short-length));
+}
+
+.tabs .tab
+{
+    float: left;
+}
+
+.tabs .tab .content
+{
+	position: absolute;
+	left: 0px;
+}
+
+.checkboxtab
+{
+	display: none;
+}
+
+.tab label
+{
+    padding: var(--short-length);
+    background-color: #ffffff88;
+ }
+
+.checkboxtab:checked ~ label
+{
+    background: white;
+    border-bottom: 1px solid white;
+    box-shadow: 0.5rem 0 2rem -1rem; 
+}
+
+.checkboxtab:checked ~ .content
+{
+    background: white;
+    box-shadow: 2rem 0 8rem -4rem; 
+	z-index: 1;
 }
 
 
@@ -479,7 +528,7 @@ main {
 .bottom {
     align-items: center;
     background: var(--blue);
-    border-radius: 2px;
+    border-radius: 2px 2px 0 0;
     display: flex;
     grid-column: 2 / 3;
     grid-row: 5 / 6;
