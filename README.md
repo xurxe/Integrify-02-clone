@@ -18,4 +18,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 Everyone at [Integrify](https://github.com/Integrify-Finland), especially my teacher and classmates.
 
+## Reference image
+
 ![alt text](./assets/assignment-2.jpg "The model we had to follow")
