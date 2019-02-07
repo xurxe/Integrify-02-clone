@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 :root {
@@ -197,6 +198,12 @@ header button {
     font-size: 1rem;
     font-weight: 600;
     padding: 0.8rem 4rem;
+}
+
+.tab button {
+    position: absolute;
+    right: var(--short-length);
+    bottom: var(--short-length);
 }
 
 
@@ -468,22 +475,27 @@ main {
 
 .content4 {
     grid-area: content4;
-    height: auto;
+    height: 100%;
     margin-top: var(--medium-length);
+    height: calc(100% - var(--medium-length));
 }
 
 .tabs
 {
     position: relative;
     clear: both;
-    padding-top: var(--short-length);
     height: 100%;
 }
 
 .content {
     margin-top: var(--short-length);
     padding: var(--short-length);
-    width: calc(100% - 2*var(--short-length));
+    width: 100%;
+    height: calc(100% - 2.66*var(--short-length)); /* not happy with this eye-balled solution */
+}
+
+.tab {
+    height: 100%;
 }
 
 .tabs .tab
@@ -494,7 +506,8 @@ main {
 .tabs .tab .content
 {
 	position: absolute;
-	left: 0px;
+    left: 0px;
+    top: 30px;
 }
 
 .checkboxtab
@@ -506,6 +519,8 @@ main {
 {
     padding: var(--short-length);
     background-color: #ffffff88;
+    position: relative;
+    top: var(--short-length);
  }
 
 .checkboxtab:checked ~ label
@@ -543,9 +558,9 @@ main {
 }
 
 .bottom::after {
-    border-right: 3.5rem solid transparent;
-    border-top: 3.5rem solid var(--blue);
-    bottom: -3.5rem;
+    border-right: 3rem solid transparent;
+    border-top: 3rem solid var(--blue);
+    bottom: -3rem;
     content: "";
     height: 0;
     left: 0;
