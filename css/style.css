@@ -28,6 +28,8 @@ html {
 h1 {
     font-size: 1.5972rem;
     text-transform: uppercase;
+    color: #aaaaaa;
+    font-weight: 100;
 }
 
 h2 {
@@ -145,7 +147,7 @@ hr {
         "info-left info info-right"
         "footer-left footer footer-right";
     grid-template-columns: 150px 1fr 150px;
-    grid-template-rows: 250px auto var(--stripes-height) auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     width: 100%;
 }
 
@@ -174,11 +176,46 @@ hr {
 }
 
 
-/* HEADER AND ADJACENTS ************************************************************************************** */
+/* HEADER **************************************************************************************************** */
 
 .header {
     grid-area: header;
+    height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: var(--bottom-height);
 }
+
+.header img {
+    height: 21rem;
+}
+
+.header em {
+    color: white;
+}
+
+.header p {
+    margin: 2rem 0;
+    padding: 0;
+    color: #aaaaaa;
+}
+
+.header div {
+    flex-shrink: 0;
+    padding: 0 2rem;
+}
+
+.header button {
+    border: none;
+    padding: 0.8rem 4rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* TOP AND BORDER HEADER ************************************************************************************** */
+
 
 .border {
     grid-area: border;
@@ -249,6 +286,24 @@ hr {
     position: relative;
 }
 
+
+.circle {
+    background: #414141;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+}
+
+.icon i {
+    line-height: 65px;
+    color: white; 
+    font-size: 2rem;
+}
+
+.name {
+    text-transform: uppercase;
+}
+
 .feature:hover {
     background-color: white;
 }
@@ -264,15 +319,16 @@ hr {
     width: 0;
 }
 
-.circle {
-    background: #414141;
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
+.feature:hover .circle {
+    background-color: #458ED3;
 }
 
-.name {
-    text-transform: uppercase;
+.feature:hover button {
+    background-color: transparent;
+    border: none;
+    color: #458ED3;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 /* MAIN B **************************************************************************************************** */
@@ -475,7 +531,7 @@ hr {
     grid-area: footer;
     height: var(--bottom-height);
 
-    color: #cccccc;
+    color: #aaaaaa;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
