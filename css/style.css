@@ -154,13 +154,17 @@ footer p {
 }
 
 .stripe-background {
-    background: repeating-linear-gradient(
+ /*    background: repeating-linear-gradient(
         -45deg,
         var(--lighter-grey),
         var(--lighter-grey) 1px,
         var(--lightest-grey) 1px,
-        var(--lightest-grey) 4px
-    );
+        var(--lightest-grey) 2px
+    ); */
+
+    background-image: linear-gradient(135deg, #cccccc 12.50%, #efefef 12.50%, #efefef 50%, #cccccc 50%, #cccccc 62.50%, #efefef 62.50%, #efefef 100%);
+    background-size: 5.66px 5.66px;
+    
 }
 
 .white {
@@ -219,8 +223,9 @@ header button {
         ". bottom ."
         ". info ."
         ". footer footer-right";
-    grid-template-columns: 150px 1fr 150px;
+    grid-template-columns: 1fr 950px 1fr;
     grid-template-rows: auto auto var(--shorter-length) auto auto auto auto;
+    grid-column-gap: var(--short-length);
     width: 100%;
 }
 
@@ -238,11 +243,12 @@ header {
 
 header img {
     height: 21rem;
+    padding: 0 3rem;
 }
 
 header div {
     flex-shrink: 0;
-    padding: 0 2rem;
+    padding: 0 1rem;
 }
 
 /* TOP AND BORDER ************************************************************************************** */
