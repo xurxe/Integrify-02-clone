@@ -4,7 +4,7 @@ The assignment was to clone the website below using only HTML and CSS. My clone 
 
 ## Demo
 
-Check it out here: https://xurxe.github.io/Integrify-2-clone/ 
+https://xurxe.github.io/Integrify-02-clone/
 
 ## Author
 
